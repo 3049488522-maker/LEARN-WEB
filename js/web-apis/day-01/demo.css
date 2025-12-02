@@ -1,0 +1,47 @@
+.index {
+  position: relative;
+}
+.header {
+  display: flex;
+  width: 92.8vw;
+  height: 8.53333333vw;
+  left: 4.53333333vw;
+  top: 12.53333333vw;
+  opacity: 1;
+  text-align: center;
+}
+.header h3 {
+  left: 36.13333333vw;
+  top: 1.33333333vw;
+  width: 19.54%;
+  height: 6.53333333 vw;
+  opacity: 1;
+  font-family: PingFangSC;
+  font-size: 4.53333333vw;
+  font-weight: normal;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 0vw;
+  color: #101010;
+}
+body img {
+  left: 0/3vw;
+  top: 21.86666667vw;
+  width: 100vw;
+  height: 26.6%;
+  opacity: 1;
+}
+.text1 {
+  left: 40px;
+  top: 628px;
+  width: 500px;
+  height: 98px;
+  opacity: 1;
+  font-family: PingFangSC;
+  font-size: 34px;
+  font-weight: normal;
+  line-height: normal;
+  letter-spacing: 0px;
+  font-variation-settings: ;
+  color: #000000;
+}
