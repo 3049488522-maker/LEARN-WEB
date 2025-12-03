@@ -1,47 +1,150 @@
-.index {
-  position: relative;
+body {
+  color: #ffffff;
 }
 .header {
+  position: fixed;
   display: flex;
-  width: 92.8vw;
-  height: 8.53333333vw;
-  left: 4.53333333vw;
-  top: 12.53333333vw;
-  opacity: 1;
-  text-align: center;
+  background-color: #ffffff;
+  width: 10rem;
+  height: 0.85333333rem;
+  padding-left: 0.45333333rem;
+  margin-right: 0.26666667rem;
+  padding-bottom: 0.85333333rem;
 }
-.header h3 {
-  left: 36.13333333vw;
-  top: 1.33333333vw;
-  width: 19.54%;
-  height: 6.53333333 vw;
-  opacity: 1;
-  font-family: PingFangSC;
-  font-size: 4.53333333vw;
-  font-weight: normal;
-  line-height: normal;
-  text-align: center;
-  letter-spacing: 0vw;
+.header .back {
+  height: 0.42666667rem;
+  margin-top: 0.21333333rem;
+  margin-right: 3.33333333rem;
+}
+.header .title {
+  font-size: 0.45333333rem;
+  line-height: 0.65333333rem;
+  padding-top: 0.13333333rem;
+  padding-bottom: 0.66006601rem;
+  font-weight: 400;
   color: #101010;
 }
-body img {
-  left: 0/3vw;
-  top: 21.86666667vw;
-  width: 100vw;
-  height: 26.6%;
-  opacity: 1;
+.goods img {
+  width: 10rem;
+  height: 5.76rem;
+  padding-top: 0.93333333rem;
 }
-.text1 {
-  left: 40px;
-  top: 628px;
-  width: 500px;
-  height: 98px;
-  opacity: 1;
-  font-family: PingFangSC;
-  font-size: 34px;
-  font-weight: normal;
-  line-height: normal;
-  letter-spacing: 0px;
-  font-variation-settings: ;
+.information .goodsName {
+  display: flex;
+  width: 100%;
+}
+.information .goodsName .left {
+  font-size: 0.45333333rem;
+  width: 6.66666667rem;
+  height: 1.30666667rem;
+  padding-left: 0.53333333rem;
+}
+.information .goodsName .right img {
+  width: 0.42666667rem;
+  height: 0.42666667rem;
+  margin-left: 0.42666667rem;
+  margin-right: 0.13333333rem;
+}
+.information .goodsName .right a {
+  font-size: 0.45333333rem;
+}
+.rules {
+  height: 0.54666667rem;
+}
+.rules a {
+  font-size: 0.37333333rem;
+  font-weight: 400;
+  padding-top: 0.4rem;
+  padding-left: 0.53333333rem;
+  padding-bottom: 0.09333333rem;
+}
+.contant {
+  height: 0.54666667rem;
+}
+.contant a {
+  font-size: 0.37333333rem;
+  font-weight: 400;
+  color: #999999;
+  padding-left: 0.53333333rem;
+  padding-bottom: 0.4rem;
+}
+.product .title {
+  margin-top: 0.4rem;
+  height: 0.54666667rem;
+  font-size: 0.37333333rem;
   color: #000000;
+  padding-left: 0.53333333rem;
+}
+.product .message {
+  margin-top: 0.09333333rem;
+  height: 1.09333333rem;
+  font-size: 0.37333333rem;
+  color: #999999;
+  padding-left: 0.53333333rem;
+  padding-right: 0.53333333rem;
+}
+.product .picture img {
+  width: 8.93333333rem;
+  height: 21.6rem;
+  padding-top: 0.4rem;
+  padding-left: 0.53333333rem;
+  padding-right: 0.53333333rem;
+}
+.btn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 2.13333333rem;
+  width: 10rem;
+  background-color: #ffffff;
+  padding: 0.42666667rem;
+}
+.btn button {
+  height: 1.28rem;
+  width: 9.17333333rem;
+  color: #ffffff;
+  border-radius: 0.74666667rem;
+  background-color: #fd661d;
+}
+.dialog {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+.dialog-content {
+  background-color: #fff;
+  width: 85%;
+  border-radius: 0.32rem;
+  padding: 0.64rem 0.42666667rem;
+  text-align: center;
+}
+.dialog-text {
+  font-size: 0.4rem;
+  margin-bottom: 0.32rem;
+}
+.dialog-btns {
+  display: flex;
+  gap: 0.50666667rem;
+}
+.dialog-btns button {
+  flex: 1;
+  height: 0.8rem;
+  border: 0.01333333rem solid #ddd;
+  border-radius: 0.74666667rem;
+  font-size: 0.42666667rem;
+}
+.dialog-btns .cancel {
+  background-color: #fff;
+  color: #333;
+}
+.dialog-btns .confirm {
+  background-color: #ff6600;
+  color: #fff;
+  border: none;
 }

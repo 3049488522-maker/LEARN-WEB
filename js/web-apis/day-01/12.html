@@ -3,37 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="./fonts/bootstrap-icons.css" />
-    <link rel="stylesheet" href="./css/bootstrap.min.css" />
-    <link rel="stylesheet" href="./demo.css" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      li {
-        list-style: none;
-      }
-
-      a {
-        color: #333;
-        text-decoration: none;
-      }
-    </style>
+    <title>作业</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./作业.css" />
   </head>
 
   <body>
-    <div class="index">
-      <div class="header">
-        <h3>兑换详情</h3>
-      </div>
-      <img src="./img/矩形.png" alt="" />
-      <div>
-        <p class="text1">周边商品名称周边商品名称周边商品名称</p>
+    <div class="header">
+      < img class="back" src="./media/return.png" />
+      <div class="title">兑换详情</div>
+    </div>
+    <div class="goods">< img src="./media/bg1.png" /></div>
+
+    <div class="information">
+      <div class="goodsName">
+        <div class="left">
+          <a href=" ">周边商品名称周边商品名称周边商品名称</a>
+        </div>
+        <div class="right">
+          < img src="./media/Frame.png" />
+          <a href="#">180000</a>
+        </div>
       </div>
     </div>
+
+    <div class="rules">
+      <a>使用规则</a>
+    </div>
+    <div class="contant">
+      <a>181积分兑换</a>
+    </div>
+
+    <div class="product">
+      <div class="title">商品详情</div>
+      <div class="message">
+        介绍文案介绍文案介绍文案介绍文案介绍文案介绍文案介绍文案介绍文案介绍文案介绍文案
+      </div>
+      <div class="picture">< img src="./media/bg2.png" /></div>
+    </div>
+
+    <div class="btn">
+      <button id="exchange-Btn">立即兑换</button>
+    </div>
+
+    <!-- 兑换弹窗 -->
+    <div class="dialog" id="exchange-Dialog">
+      <div class="dialog-content">
+        <div class="dialog-text">本次兑换消耗181积分,是否要兑换?</div>
+        <div class="dialog-btns">
+          <button class="cancel" id="cancel-Btn">再想想</button>
+          <button class="confirm" id="confirm-Btn">兑换</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const exchangeBtn = document.getElementById("exchange-Btn");
+      const exchangeDialog = document.getElementById("exchange-Dialog");
+      const cancelBtn = document.getElementById("cancel-Btn");
+      const confirmBtn = document.getElementById("confirm-Btn");
+
+      exchangeBtn.addEventListener("click", () => {
+        exchangeDialog.style.display = "flex";
+      });
+
+      cancelBtn.addEventListener("click", () => {
+        exchangeDialog.style.display = "none";
+      });
+    </script>
+
+    <script src="./js/flexible.js"></script>
   </body>
 </html>
