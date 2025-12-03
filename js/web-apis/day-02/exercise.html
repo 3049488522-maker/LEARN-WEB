@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>新闻列表</title>
+    <style>
+      /* 基础样式，确保页面出现滚动条 */
+
+      body {
+        margin: 0;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+      }
+
+      #newsList {
+        list-style: none;
+        padding: 0;
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      #newsList li {
+        margin: 15px 0;
+        padding: 15px;
+        border-bottom: 1px solid #e0e0e0;
+      }
+
+      #newsList a {
+        text-decoration: none;
+        color: #2c3e50;
+        font-size: 16px;
+      }
+
+      #newsList a:hover {
+        color: #3498db;
+      }
+
+      .like-btn {
+        margin-left: 20px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 4px;
+        background-color: #f1c40f;
+        color: white;
+        cursor: pointer;
+      }
+
+      .like-btn:hover {
+        background-color: #f39c12;
+      }
+
+      #backToTop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #3498db;
+        color: white;
+        cursor: pointer;
+        display: none;
+      }
+
+      #backToTop:hover {
+        background-color: #2980b9;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 新闻列表容器 -->
+    <ul id="newsList"></ul>
+
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop">返回顶部</button>
+
+    <script>
+      // 新闻数据
+      const newsData = [
+        {
+          id: 1,
+          title: "人工智能技术在医疗领域的突破性应用",
+          views: 12500,
+          likes: 850,
+        },
+        {
+          id: 2,
+          title: "全球气候峰会达成历史性减排协议",
+          views: 18600,
+          likes: 1200,
+        },
+        {
+          id: 3,
+          title: "新能源汽车销量创历史新高",
+          views: 15200,
+          likes: 980,
+        },
+        {
+          id: 4,
+          title: "科学家发现新型抗癌药物成分",
+          views: 14300,
+          likes: 1100,
+        },
+        {
+          id: 5,
+          title: "太空探索新进展：火星样本成功返回地球",
+          views: 22100,
+          likes: 1650,
+        },
+        {
+          id: 6,
+          title: "数字货币监管政策正式出台",
+          views: 19800,
+          likes: 1320,
+        },
+        {
+          id: 7,
+          title: "教育改革新方案引发社会热议",
+          views: 16700,
+          likes: 950,
+        },
+        {
+          id: 8,
+          title: "5G网络建设全面提速",
+          views: 13400,
+          likes: 820,
+        },
+        {
+          id: 9,
+          title: "乡村振兴战略取得显著成效",
+          views: 11200,
+          likes: 750,
+        },
+        {
+          id: 10,
+          title: "跨境电商迎来爆发式增长",
+          views: 14500,
+          likes: 920,
+        },
+        {
+          id: 11,
+          title: "量子计算技术实现重大突破",
+          views: 17800,
+          likes: 1420,
+        },
+        {
+          id: 12,
+          title: "城市更新改造项目正式启动",
+          views: 9800,
+          likes: 650,
+        },
+        {
+          id: 13,
+          title: "绿色建筑标准全面升级",
+          views: 8700,
+          likes: 580,
+        },
+        {
+          id: 14,
+          title: "传统文化复兴带动文创产业发展",
+          views: 12300,
+          likes: 800,
+        },
+        {
+          id: 15,
+          title: "智慧城市建设成果显著",
+          views: 15600,
+          likes: 1050,
+        },
+        {
+          id: 16,
+          title: "全民健身运动掀起新热潮",
+          views: 10900,
+          likes: 720,
+        },
+        {
+          id: 17,
+          title: "在线教育平台用户规模持续扩大",
+          views: 13800,
+          likes: 890,
+        },
+        {
+          id: 18,
+          title: "生物多样性保护工作取得重要进展",
+          views: 9600,
+          likes: 680,
+        },
+        {
+          id: 19,
+          title: "高铁网络建设再传捷报",
+          views: 14200,
+          likes: 960,
+        },
+        {
+          id: 20,
+          title: "中小企业数字化转型加速推进",
+          views: 11800,
+          likes: 790,
+        },
+        {
+          id: 21,
+          title: "虚拟现实技术改变娱乐产业格局",
+          views: 16500,
+          likes: 1150,
+        },
+        {
+          id: 22,
+          title: "海洋生态保护项目启动实施",
+          views: 8900,
+          likes: 620,
+        },
+        {
+          id: 23,
+          title: "区块链技术助力供应链管理",
+          views: 13200,
+          likes: 870,
+        },
+        {
+          id: 24,
+          title: "老龄化社会养老服务体系建设加快",
+          views: 12700,
+          likes: 830,
+        },
+        {
+          id: 25,
+          title: "农业科技助力粮食安全保障",
+          views: 10500,
+          likes: 710,
+        },
+        {
+          id: 26,
+          title: "网络安全防护能力全面提升",
+          views: 15900,
+          likes: 1080,
+        },
+        {
+          id: 27,
+          title: "共享经济发展模式不断创新",
+          views: 12400,
+          likes: 810,
+        },
+        {
+          id: 28,
+          title: "非遗文化传承保护工作深入推进",
+          views: 9300,
+          likes: 640,
+        },
+        {
+          id: 29,
+          title: "智能制造推动制造业转型升级",
+          views: 14800,
+          likes: 990,
+        },
+        {
+          id: 30,
+          title: "普惠金融支持实体经济发展",
+          views: 11300,
+          likes: 760,
+        },
+        {
+          id: 31,
+          title: "新能源发电装机容量持续增长",
+          views: 13900,
+          likes: 930,
+        },
+        {
+          id: 32,
+          title: "数字政府建设提升政务服务效能",
+          views: 12100,
+          likes: 820,
+        },
+        {
+          id: 33,
+          title: "消费升级引领消费市场回暖",
+          views: 16200,
+          likes: 1100,
+        },
+        {
+          id: 34,
+          title: "人才引进政策吸引海外高端人才",
+          views: 9700,
+          likes: 660,
+        },
+        {
+          id: 35,
+          title: "生态环境治理体系不断完善",
+          views: 10800,
+          likes: 730,
+        },
+        {
+          id: 36,
+          title: "体育产业发展势头强劲",
+          views: 12900,
+          likes: 860,
+        },
+        {
+          id: 37,
+          title: "远程办公模式重塑工作方式",
+          views: 15300,
+          likes: 1020,
+        },
+        {
+          id: 38,
+          title: "文化遗产数字化保护工程启动",
+          views: 11600,
+          likes: 780,
+        },
+        {
+          id: 39,
+          title: "芯片自主研发能力稳步提升",
+          views: 18400,
+          likes: 1280,
+        },
+        {
+          id: 40,
+          title: "一带一路倡议促进国际合作",
+          views: 14100,
+          likes: 940,
+        },
+        {
+          id: 41,
+          title: "直播电商成为消费新增长点",
+          views: 17200,
+          likes: 1180,
+        },
+        {
+          id: 42,
+          title: "垃圾分类处理体系逐步完善",
+          views: 9500,
+          likes: 630,
+        },
+        {
+          id: 43,
+          title: "互联网医疗缓解看病难问题",
+          views: 13600,
+          likes: 910,
+        },
+        {
+          id: 44,
+          title: "职业教育改革培养技能人才",
+          views: 10700,
+          likes: 700,
+        },
+        {
+          id: 45,
+          title: "文旅融合发展激发消费潜力",
+          views: 12800,
+          likes: 850,
+        },
+        {
+          id: 46,
+          title: "无人驾驶技术商业化进程加快",
+          views: 16900,
+          likes: 1160,
+        },
+        {
+          id: 47,
+          title: "养老服务体系提质增效",
+          views: 10200,
+          likes: 690,
+        },
+        {
+          id: 48,
+          title: "跨境电商综试区建设成效显著",
+          views: 14500,
+          likes: 970,
+        },
+        {
+          id: 49,
+          title: "碳达峰碳中和目标稳步推进",
+          views: 15700,
+          likes: 1060,
+        },
+        {
+          id: 50,
+          title: "数字经济赋能传统产业转型",
+          views: 18300,
+          likes: 1250,
+        },
+      ];
+
+      // 渲染新闻列表
+      const newsList = document.getElementById("newsList");
+      newsData.forEach((item) => {
+        const li = document.createElement("li");
+        li.id = `news-item-${item.id}`; // 给li设置唯一ID
+        li.innerHTML = `
+                <a href="https://example.com" data-id="${item.id}">${item.title}</a>
+                <button class="like-btn" data-id="${item.id}" data-likes="${item.likes}">点赞(${item.likes})</button>
+            `;
+        newsList.appendChild(li);
+      });
+
+      // 1. 事件委托：处理li、a标签点击事件
+      newsList.addEventListener("click", (e) => {
+        const target = e.target;
+
+        // 处理a标签（阻止默认跳转 + 打印ID）
+        if (target.tagName === "A") {
+          e.preventDefault(); // 阻止默认跳转行为
+          console.log(`点击A标签，对应新闻ID：${target.dataset.id}`);
+        }
+
+        // 处理li标签（打印ID）
+        else if (target.tagName === "LI") {
+          console.log(`点击LI元素，对应新闻ID：${target.id.split("-")[2]}`);
+        }
+      });
+
+      // 2. 处理点赞按钮点击事件（阻止冒泡）
+      newsList.addEventListener("click", (e) => {
+        const target = e.target;
+        if (target.classList.contains("like-btn")) {
+          e.stopPropagation(); // 阻止冒泡到ul
+          const currentLikes = parseInt(target.dataset.likes);
+          const newLikes = currentLikes + 1;
+
+          // 更新点赞数和显示文本
+          target.dataset.likes = newLikes;
+          target.textContent = `点赞(${newLikes})`;
+
+          console.log(
+            `新闻ID ${target.dataset.id} 点赞成功，当前点赞数：${newLikes}`
+          );
+        }
+      });
+
+      // 3. 监听页面滚动，控制返回顶部按钮显示
+      const backToTop = document.getElementById("backToTop");
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 200) {
+          backToTop.style.display = "block";
+        } else {
+          backToTop.style.display = "none";
+        }
+      });
+
+      // 4. 返回顶部功能
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", // 平滑滚动
+        });
+      });
+    </script>
+  </body>
+</html>
