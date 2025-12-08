@@ -60,6 +60,22 @@
       <div class="modal-mask" id="modalmask" data-close></div>
     </div>
 
+    <script>
+      const openModal = document.getElementById("openModal");
+      const modal = document.getElementById("modal");
+      const closeBtns = document.querySelectorAll("[data-close]");
+      const modalmask = document.getElementById("modalmask");
+
+      openModal.addEventListener("click", () => {
+        modal.classList.add("show");
+        modalmask.classList.add("show");
+      });
+
+      closeBtns.forEach((btn) => {
+        btn.addEventListener("click", () => modal.classList.remove("show"));
+      });
+    </script>
+
     <script src="./js/flexible.js"></script>
   </body>
 </html>
