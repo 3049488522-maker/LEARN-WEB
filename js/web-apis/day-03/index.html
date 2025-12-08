@@ -244,12 +244,125 @@
       renderResumeList();
       const newsAdd = document.querySelector(".news-btn");
       const exchangeModal = document.querySelector(".exchange-modal");
-      const body = document.body; // 先获取body元素（原代码可能未定义）
+      const body = document.body;
       const yes = document.querySelector(".yes");
       const no = document.querySelector(".no");
 
       const formInputs = document.querySelectorAll(".form-input");
       const genderRadios = document.querySelectorAll('input[name="gender"]');
+      // 渲染简历列表
+      function renderResumeList() {
+        let newsContent = "";
+        dataList.forEach((item) => {
+          newsContent += `
+       <li class="news-item">
+              <div class="d-flex">
+                <a class="news-left"><img src="./img/al.png" alt="" /></a>
+                <a class="news-right">
+                  <ul>
+                    <li>
+                      <span>${item.name}</span>
+                      <span><img src="${item.gender}" alt="" /></span>
+                    </li>
+                    <li>
+                      <span>${item.educationalBackground} | ${item.age}岁 | ${item.city} | ${item.workTime}年经验</span>
+                    </li>
+                    <li>
+                      <span
+                        >招聘职位: ${item.work} 工作经验: ${item.workExperience} 专业: ${item.major}</span
+                      >
+                    </li>
+                  </ul>
+                </a>
+              </div>
+              <div class="news-add">
+                <button class="left-btn">编辑</button>
+                <button class="right-btn">删除</button>
+              </div>
+            </li>
+      `;
+        });
+        ulData.innerHTML = newsContent;
+      }
+
+      newsAdd.addEventListener("click", function () {
+        exchangeModal.style.display = "flex";
+        body.style.overflow = "hidden"; // 仅在打开弹窗时锁定滚动
+        // 重置表单
+        formInputs.forEach((input) => {
+          if (input.type === "text") input.value = "";
+        });
+        genderRadios[0].checked = true;
+      });
+
+      no.addEventListener("click", function () {
+        exchangeModal.style.display = "none";
+        body.style.overflow = "auto"; // 仅在打开弹窗时锁定滚动
+      });
+
+      yes.addEventListener("click", function () {
+        // console.log("添加");
+        // 收集表单数据
+        const newResume = {};
+
+        // 收集输入框和下拉框数据
+        formInputs.forEach((input) => {
+          const key = input.getAttribute("data-key");
+          let value = input.value.trim();
+
+          // 类型转换：年龄和工作年限转为数字
+          if (key === "age" || key === "workTime") {
+            value = Number(value) || 0;
+          }
+
+          // 学历下拉框特殊处理（匹配选项文本）
+          if (key === "educationalBackground") {
+            value = input.options[input.selectedIndex].text;
+          }
+
+          newResume[key] = value;
+        });
+        // 收集性别数据
+        const selectedGender = document.querySelector(
+          'input[name="gender"]:checked'
+        ).value;
+        newResume.gender = selectedGender;
+
+        // 简单表单验证
+        if (
+          !newResume.name ||
+          newResume.name.length < 2 ||
+          newResume.name.length > 6
+        ) {
+          alert("姓名必须为2~6位字符");
+          return;
+        }
+        if (newResume.age < 18 || newResume.age > 99) {
+          alert("年龄必须在18~99之间");
+          return;
+        }
+        if (newResume.workTime < 0 || newResume.workTime > 99) {
+          alert("工作年限必须在0~99之间");
+          return;
+        }
+        if (
+          !newResume.city ||
+          !newResume.work ||
+          !newResume.workExperience ||
+          !newResume.major
+        ) {
+          alert("请填写完整信息");
+          return;
+        }
+
+        // 添加到数组并重新渲染
+        dataList.unshift(newResume); // 新增数据添加到列表顶部
+        renderResumeList();
+
+        // 关闭弹窗
+        exchangeModal.style.display = "none";
+        body.style.overflow = "auto";
+      });
     </script>
   </body>
 </html>
