@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./base.css" />
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+
+  <body>
+    <div class="resume">
+      <div class="left">
+        <div class="title">
+          <img src="./img/企业.png" alt="" />
+          <span>飞羽招聘管理后台</span>
+        </div>
+
+        <div class="resume-Management">
+          <button class="management-btn">
+            <div class="first">
+              <img src="./img/简历.png" alt="" />
+              <span class="second">简历管理</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <div class="right-box">
+        <div class="right">
+          <div class="head">
+            <span>应用</span>
+            <span><img src="./img/Line 1 (Stroke).svg" alt="" /></span>
+            <span>简历管理</span>
+          </div>
+
+          <hr />
+
+          <div class="mgt">
+            <span
+              ><img src="./img/Rectanimg/Femalee 1348@1x.png" alt=""
+            /></span>
+            <span>简历管理</span>
+          </div>
+
+          <div class="titles">
+            <div class="flex-d">
+              <a>
+                <button class="firsts"><span>全部 1000</span></button>
+              </a>
+              <a>
+                <button><span>招聘中 150</span></button>
+              </a>
+              <a>
+                <button><span>已入职 210</span></button>
+              </a>
+              <a>
+                <button><span>已淘汰 210</span></button>
+              </a>
+            </div>
+            <div class="search">
+              <input type="text" placeholder="搜索姓名" />
+            </div>
+            <div class="ss"><button class="news-btn">新增简历</button></div>
+          </div>
+
+          <div class="content">
+            <div class="news-hr"></div>
+            <ul class="news-list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- 弹窗 -->
+      <div class="exchange-modal">
+        <div class="contents">
+          <ul>
+            <li>
+              1.姓名：<input
+                type="text"
+                placeholder="2~6位字符长度 "
+                class="form-input"
+                data-key="name"
+              />
+            </li>
+            <li>
+              2.学历：<select
+                class="form-input"
+                data-key="educationalBackground"
+              >
+                <option>初中及以下</option>
+                <option>高中</option>
+                <option>大专</option>
+                <option>大学</option>
+                <option>研究生或更高</option>
+              </select>
+            </li>
+            <li>
+              3.年龄：<input
+                type="text"
+                placeholder="18~99  "
+                class="form-input"
+                data-key="age"
+              />
+            </li>
+            <li>
+              4.城市 ：<input type="text" class="form-input" data-key="city" />
+            </li>
+            <li>
+              5.工作年限 ：<input
+                type="text"
+                placeholder="0~99 "
+                class="form-input"
+                data-key="workTime"
+              />
+            </li>
+            <li>
+              6.职位：<input type="text" class="form-input" data-key="work" />
+            </li>
+            <li>
+              7.工作经验(上家公司)：<input
+                type="text"
+                class="form-input"
+                data-key="workExperience"
+              />
+            </li>
+            <li>
+              8.专业 ：<input type="text" class="form-input" data-key="major" />
+            </li>
+            <li>
+              9.性别 ：<input
+                type="radio"
+                name="gender"
+                value="./img/Female.png"
+                checked
+              />男<input
+                type="radio"
+                name="gender"
+                value="./img/Female.png"
+              />女
+            </li>
+          </ul>
+          <div class="modal-btns">
+            <button class="yes">确 认</button>
+            <button class="no">取 消</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const dataList = [
+        {
+          name: "刘浩祥",
+          educationalBackground: "本科学历",
+          age: 26,
+          city: "北京",
+          workTime: 3,
+          work: "Java开发",
+          workExperience: "新浪",
+          major: "软件工程",
+          gender: "./img/Female.png",
+        },
+        {
+          name: "陈晓芸",
+          educationalBackground: "本科学历",
+          age: 26,
+          city: "北京",
+          workTime: 3,
+          work: "Java开发",
+          workExperience: "新浪",
+          major: "软件工程",
+          gender: "./img/Male.png",
+        },
+        {
+          name: "陈晓芸",
+          educationalBackground: "本科学历",
+          age: 26,
+          city: "北京",
+          workTime: 3,
+          work: "Java开发",
+          workExperience: "新浪",
+          major: "软件工程",
+          gender: "./img/Female.png",
+        },
+        {
+          name: "陈晓芸",
+          educationalBackground: "本科学历",
+          age: 26,
+          city: "北京",
+          workTime: 3,
+          work: "Java开发",
+          workExperience: "新浪",
+          major: "软件工程",
+          gender: "./img/Male.png",
+        },
+        {
+          name: "陈晓芸",
+          educationalBackground: "本科学历",
+          age: 26,
+          city: "北京",
+          workTime: 3,
+          work: "Java开发",
+          workExperience: "新浪",
+          major: "软件工程",
+          gender: "./img/Female.png",
+        },
+        {
+          name: "陈晓芸",
+          educationalBackground: "本科学历",
+          age: 26,
+          city: "北京",
+          workTime: 3,
+          work: "Java开发",
+          workExperience: "新浪",
+          major: "软件工程",
+          gender: "./img/Female.png",
+        },
+        {
+          name: "陈晓芸",
+          educationalBackground: "本科学历",
+          age: 26,
+          city: "北京",
+          workTime: 3,
+          work: "Java开发",
+          workExperience: "新浪",
+          major: "软件工程",
+          gender: "./img/Male.png",
+        },
+        {
+          name: "陈晓芸",
+          educationalBackground: "本科学历",
+          age: 26,
+          city: "北京",
+          workTime: 3,
+          work: "Java开发",
+          workExperience: "新浪",
+          major: "软件工程",
+          gender: "./img/Female.png",
+        },
+      ];
+      const ulData = document.querySelector(".news-list");
+
+      renderResumeList();
+      const newsAdd = document.querySelector(".news-btn");
+      const exchangeModal = document.querySelector(".exchange-modal");
+      const body = document.body; // 先获取body元素（原代码可能未定义）
+      const yes = document.querySelector(".yes");
+      const no = document.querySelector(".no");
+
+      const formInputs = document.querySelectorAll(".form-input");
+      const genderRadios = document.querySelectorAll('input[name="gender"]');
+    </script>
+  </body>
+</html>

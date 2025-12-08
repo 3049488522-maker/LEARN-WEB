@@ -1,0 +1,434 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #00034d;
+  height: 100%;
+  overflow: hidden;
+}
+
+.resume {
+  display: flex;
+  width: 100%;
+  /* 占满父级宽度 */
+  height: 100%;
+  /* 占满父级高度 */
+  /* overflow: hidden; */
+}
+
+.resume .left {
+  width: 226px;
+  /* background-color: aqua; */
+}
+
+.left .title {
+  display: flex;
+  width: 226px;
+  height: 28px;
+  padding-left: 35px;
+  margin-top: 30px;
+  align-self: center;
+}
+
+.left .title img {
+  width: 28px;
+}
+
+.left .title span {
+  margin-left: 5px;
+  font-size: 14px;
+  color: #ffffff;
+  line-height: 28px;
+}
+
+.left .resume-Management {
+  width: 226px;
+  padding-left: 17px;
+  margin-top: 86px;
+}
+
+.resume-Management .management-btn {
+  width: 100%;
+  height: 47px;
+  background-color: #f2f3f5;
+  border-width: 0;
+  padding: auto 0;
+  border-radius: 200px 0px 0px 200px;
+}
+
+.management-btn .first {
+  display: flex;
+  height: 22px;
+  padding-left: 53px;
+  justify-self: start;
+}
+
+.management-btn .first img {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+
+.management-btn .second {
+  display: block;
+  margin-left: 8px;
+  line-height: 22px;
+  font-size: 14px;
+  color: #00034d;
+}
+
+.resume .right-box {
+  padding: 21px 0;
+  flex: 1;
+}
+
+.resume .right {
+  background-color: #f2f3f5;
+  border-radius: 30px;
+  height: 100%;
+  padding: 13px 25px;
+}
+
+.right .head {
+  display: flex;
+  height: 48px;
+  /* background-color: aqua; */
+  align-items: center;
+}
+
+.head span {
+  height: 22px;
+}
+
+.head span:nth-child(1) {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  color: #909399;
+}
+
+.head span:nth-child(2) img {
+  width: 12px;
+}
+
+.head span:nth-child(3) {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  color: #303133;
+}
+
+.right hr {
+  color: #dcdfe6;
+}
+
+.right .mgt {
+  display: flex;
+  margin-top: 22px;
+  height: 22px;
+}
+
+.mgt span:nth-child(1) img {
+  width: 3px;
+  height: 18px;
+  border-radius: 1.5px;
+  margin-top: 2px;
+}
+
+.mgt span:nth-child(2) {
+  display: flex;
+  font-size: 14px;
+  color: #000000;
+  align-items: center;
+  margin-left: 8px;
+}
+
+.right .titles {
+  flex: 1;
+  display: flex;
+}
+
+.titles .flex-d {
+  flex: 1;
+  display: flex;
+}
+
+.right .titles a {
+  display: flex;
+  width: 124px;
+  height: 32px;
+  align-items: center;
+  margin-right: 14px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.right .titles a:nth-child(1) {
+  display: flex;
+  width: 124px;
+  height: 32px;
+  background-color: #ffffff;
+  align-items: center;
+}
+
+.titles a button {
+  display: flex;
+  margin-left: 30px;
+  height: 22px;
+  align-items: center;
+  border-width: 0;
+}
+
+.titles a .firsts {
+  display: flex;
+  margin-left: 30px;
+  height: 22px;
+  align-items: center;
+  background-color: #ffffff;
+  border-width: 0;
+}
+
+.titles button span {
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+}
+
+.titles .firsts span:nth-child(1) {
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  color: #020aff;
+}
+
+.titles .search {
+  display: flex;
+  /* margin-left: 439.5px; */
+  height: 32px;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.search input {
+  height: 32px;
+  border-radius: 100px;
+  width: 130px;
+  background: #ffffff;
+  border-width: 0px;
+  text-align: center;
+}
+
+.titles .ss {
+  display: flex;
+  height: 32px;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 25px;
+}
+
+.ss .news-btn {
+  display: flex;
+  border-radius: 4px;
+  height: 32px;
+  width: 88px;
+  background-color: #020aff;
+  border-width: 0px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.ss .news-btn:active {
+  background-color: #e55a1a;
+  /* 点击反馈色 */
+}
+
+.right .content {
+  border-radius: 10px;
+  border: 1px solid #ebeef5;
+  margin-bottom: 7px;
+  /* 基于视口高度计算最大高度（可根据实际布局微调数值） */
+  max-height: calc(100vh - 250px);
+  overflow-y: auto;
+  /* 垂直溢出时显示滚动条 */
+  overflow-x: hidden;
+  /* 隐藏不必要的横向滚动条 */
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+
+/* 确保列表项自适应宽度，避免横向溢出 + 底部间距 */
+
+.content .news-list {
+  width: 100%;
+  padding: 0 0 20px 0;
+  /* 底部增加20px内边距（可根据需求调整数值） */
+  margin: 0;
+  list-style: none;
+}
+
+.content .news-hr {
+  margin-top: 55.5px;
+  margin-left: 23px;
+  margin-right: 23px;
+  height: 0;
+  border-bottom: 1px solid #ebeef5;
+}
+
+.content .news-list .news-item {
+  display: flex;
+  height: 95px;
+  border-bottom: 1px solid #ebeef5;
+}
+
+.d-flex {
+  display: flex;
+  flex: 1;
+}
+
+.news-item .news-left {
+  display: flex;
+  height: 95px;
+  align-items: center;
+  padding-left: 27px;
+}
+
+.news-item .news-left img {
+  width: 56px;
+  border-radius: 100px;
+}
+
+.news-item .news-right {
+  height: 95px;
+  align-items: center;
+  padding-left: 29px;
+  padding-top: 12px;
+}
+
+.news-item .news-add {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  margin-right: 61px;
+}
+
+.news-add .left-btn {
+  margin-right: 16px;
+  height: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  color: #f54505;
+  border-width: 0;
+  background-color: #ffffff;
+}
+
+.news-add .right-btn {
+  font-size: 14px;
+  line-height: 20px;
+  height: 20px;
+  margin-right: 186px;
+  color: #020aff;
+  border-width: 0;
+  background-color: #ffffff;
+}
+
+.news-right ul li {
+  display: flex;
+  align-items: center;
+}
+
+.news-right ul li:nth-child(1) {
+  height: 23px;
+}
+
+.news-right ul li:nth-child(1) span:nth-child(1) {
+  font-size: 14px;
+  width: 60.3px;
+  line-height: 23px;
+  color: #303133;
+}
+
+.news-right ul li:nth-child(1) span:nth-child(2) {
+  width: 15.71px;
+}
+
+.news-right ul li:nth-child(1) span:nth-child(2) img {
+  width: 15.71px;
+}
+
+.news-right ul li:nth-child(2) {
+  height: 20px;
+}
+
+.news-right ul li:nth-child(2) span {
+  margin-top: 2px;
+  font-size: 12px;
+  width: 260.54px;
+  line-height: 20px;
+  color: #a8abb2;
+}
+
+.news-right ul li:nth-child(3) {
+  height: 20px;
+}
+
+.news-right ul li:nth-child(3) span {
+  margin-top: 6px;
+  line-height: 20px;
+  font-size: 12px;
+  color: #a8abb2;
+}
+
+/* 弹窗遮罩层 */
+
+.resume .exchange-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  display: none;
+  /* 默认隐藏 */
+}
+
+.exchange-modal .contents {
+  background-color: #ffffff;
+  margin: 20px;
+  padding: 10px;
+}
+
+.exchange-modal .contents ul li {
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+
+.contents .modal-btns {
+  display: flex;
+  height: 40px;
+  align-items: center;
+}
+
+.modal-btns button {
+  border-radius: 10px;
+  height: 40px;
+  width: 60px;
+  line-height: 40px;
+  margin-left: 50px;
+  background-color: #ffffff;
+}
+
+.modal-btns button:active {
+  background-color: #e55a1a;
+  /* 点击反馈色 */
+}
